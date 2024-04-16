@@ -1,0 +1,23 @@
+int linea;
+int dir = 1;
+
+void setup(){
+  size(500, 500);
+  linea=200;
+}
+
+void draw(){
+  background(0);
+  for (int x = 0; x < 1; x++){
+    linea = linea + dir;
+  }
+  if (linea >= height || linea <= 0){
+    dir = dir *-1;
+  }
+  println(linea);
+  
+  stroke(255);
+  fill(0,255,0);
+  line(dir, linea, width, linea);
+  ellipse(width/2, linea + 40, 80, 80);
+}
